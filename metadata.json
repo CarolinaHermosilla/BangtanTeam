@@ -1,0 +1,6 @@
+{
+  "name": "PARK-OS Parking System",
+  "description": "Enterprise-grade real-time parking management system designed in Stitch. Features live occupancy tracking, guard operational panels, and user views with instantaneous device-to-device synchronization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom Color Palette from Stitch configuration */
+  --color-surface: #091422;
+  --color-surface-dim: #091422;
+  --color-surface-bright: #303a49;
+  --color-surface-container-lowest: #050e1d;
+  --color-surface-container-low: #121c2a;
+  --color-surface-container: #16202f;
+  --color-surface-container-high: #202a3a;
+  --color-surface-container-highest: #2b3545;
+  --color-on-surface: #d9e3f7;
+  --color-on-surface-variant: #c3c6d7;
+  --color-inverse-surface: #d9e3f7;
+  --color-inverse-on-surface: #273140;
+  --color-outline: #8d90a0;
+  --color-outline-variant: #434655;
+  --color-surface-tint: #b4c5ff;
+  --color-primary-color: #2563eb; /* Helper for primary */
+  --color-primary: #b4c5ff;
+  --color-on-primary: #002a78;
+  --color-primary-container: #2563eb;
+  --color-on-primary-container: #eeefff;
+  --color-inverse-primary: #0053db;
+  --color-secondary: #cbbeff;
+  --color-on-secondary: #340098;
+  --color-secondary-container: #4b21bd;
+  --color-on-secondary-container: #baa9ff;
+  --color-tertiary: #ffb596;
+  --color-on-tertiary: #581e00;
+  --color-tertiary-container: #bc4800;
+  --color-on-tertiary-container: #ffede6;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #dbe1ff;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-on-primary-fixed: #00174b;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-secondary-fixed: #e7deff;
+  --color-secondary-fixed-dim: #cbbeff;
+  --color-on-secondary-fixed: #1e0061;
+  --color-on-secondary-fixed-variant: #4b21bd;
+  --color-tertiary-fixed: #ffdbcd;
+  --color-tertiary-fixed-dim: #ffb596;
+  --color-on-tertiary-fixed: #360f00;
+  --color-on-tertiary-fixed-variant: #7d2d00;
+  --color-background: #091422;
+  --color-on-background: #d9e3f7;
+  --color-surface-variant: #2b3545;
+  --color-status-available: #10B981;
+  --color-status-occupied: #EF4444;
+  --color-status-reserved: #F59E0B;
+  --color-surface-deep: #0F172A;
+  --color-surface-glass: rgba(30, 41, 59, 0.7);
+}
+
+/* Custom styles and animations */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.98); }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b3545;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #434655;
+}
+
+/* Interactive custom grid alignment */
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.parking-spot {
+  aspect-ratio: 2/3;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.parking-spot:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(180, 197, 255, 0.15);
+  z-index: 10;
+}
+
+.glass-panel {
+  background: rgba(30, 41, 59, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
