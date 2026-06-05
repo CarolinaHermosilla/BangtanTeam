@@ -4,6 +4,7 @@ import AdminDashboard from "./components/AdminDashboard";
 import GuardPanel from "./components/GuardPanel";
 import ProfessorView from "./components/ProfessorView";
 import UserManagement from "./components/UserManagement";
+import DatabaseInspector from "./components/DatabaseInspector";
 
 export default function App() {
   const [activeView, setActiveView] = useState<"dashboard" | "operations" | "security" | "users" | "simulator">("simulator");
@@ -502,6 +503,11 @@ export default function App() {
                       />
                     </div>
                   </div>
+                </div>
+
+                {/* Live PostgreSQL Simulated Schema Inspector */}
+                <div className="xl:col-span-12">
+                  <DatabaseInspector />
                 </div>
               </div>
             </div>
